@@ -31,10 +31,22 @@ const CheckOut = () => {
         <title>InventiSync | D | Check Out</title>
       </Helmet>
       <DashNavSecond heading={"Check Out"}></DashNavSecond>
-      <div className="grid grid-cols-4 gap-3 p-5">
-        {products.map((item) => (
-          <CartCard key={item._id} item={item}></CartCard>
-        ))}
+      <div className="">
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            {products && products.length > 0 ? (
+              <div className="grid grid-cols-4 gap-3 p-5">
+                {products.map((item) => (
+                  <CartCard key={item._id} item={item} refetch={refetch}></CartCard>
+                ))}
+              </div>
+            ) : (
+              <p>Your cart is empty.</p>
+            )}
+          </>
+        )}
       </div>
     </div>
   );

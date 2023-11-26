@@ -54,9 +54,9 @@ const AddProducts = () => {
         icon: "error",
         title: "Product limit reached",
         showConfirmButton: false,
-        timer: 1500,
+        timer: 2000,
       });
-      // navigate("/subscription");
+      navigate("/dashboard/payment");
       setIsLoading(false);
       return;
     }
@@ -123,12 +123,13 @@ const AddProducts = () => {
         console.log(res.data);
         if (res.data.insertedId) {
           toast.success("Product added successfully");
-          // navigate("/dashboard/myproducts");
+          navigate("/dashboard/myproducts");
         }
       })
       .catch((error) => {
         console.error("Error :", error);
         toast.warn("product cant be added at the moment");
+       
       })
       .finally(() => {
         setIsLoading(false);

@@ -100,7 +100,7 @@ const Dashboard = () => {
                     
                     <li>
                       <Link
-                        to="/payment"
+                        to="payment"
                         className="bg-base-300 hover:bg-black hover:text-white p-3 font-semibold"
                       >
                         Subscription & Payment

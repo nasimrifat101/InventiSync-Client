@@ -15,6 +15,7 @@ import MyProducts from "../Pages/Dashboard/Manager/MyProducts";
 import AddProducts from "../Pages/Dashboard/extra/AddProducts";
 import SalesCollection from "../Pages/Dashboard/Manager/SalesCollection";
 import CheckOut from "../Pages/Dashboard/Manager/CheckOut";
+import PaymentSubscribsion from "../Pages/Dashboard/Manager/PaymentSubscribsion";
 
 const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
         path: "checkout",
         element: <CheckOut></CheckOut>,
       },
+      {
+        path: 'payment',
+        element: <PaymentSubscribsion></PaymentSubscribsion>
+      }
     ],
   },
 ]);

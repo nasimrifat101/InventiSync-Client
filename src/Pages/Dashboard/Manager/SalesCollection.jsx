@@ -39,9 +39,11 @@ const SalesCollection = () => {
     item._id.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const handleSold = (item) => {
+    console.log('Item:', item);
     axiosSecure.get(`/carts/${item._id}`)
-      .then((response) => {
-        toast.warn("Product is already in the cart. Please clear payment from Checkout tab.");
+    .then((response) => {
+      if (response.data) {
+        toast.warn("Product is already in the cart. Please clear payment from Checkout tab.")}
       })
       .catch((error) => {
         if (error.response && error.response.status === 404) {
