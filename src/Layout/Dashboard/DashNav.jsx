@@ -7,7 +7,7 @@ const DashNav = ({total, heading}) => {
     <div>
       <div className="navbar bg-[#242529]">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">{heading}: {total}</a>
+          <a className="btn btn-ghost text-xl">{heading} {total}</a>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">

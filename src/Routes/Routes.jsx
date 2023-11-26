@@ -13,6 +13,7 @@ import AdminRoute from "./AdminRoute";
 import MyStore from "../Pages/Dashboard/Manager/MyStore";
 import MyProducts from "../Pages/Dashboard/Manager/MyProducts";
 import AddProducts from "../Pages/Dashboard/extra/AddProducts";
+import SalesCollection from "../Pages/Dashboard/Manager/SalesCollection";
 
 
 const router = createBrowserRouter([
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
       {
         path: "myproducts",
         element: <MyProducts></MyProducts>,
+      },
+      {
+        path: "salescollection",
+        element:<SalesCollection></SalesCollection>
       },
     ],
   },
