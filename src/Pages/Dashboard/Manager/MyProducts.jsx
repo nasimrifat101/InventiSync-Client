@@ -9,6 +9,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useAuth from "../../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import UpdateProduct from "../extra/UpdateProduct";
 
 const MyProducts = () => {
   const navigate = useNavigate();
@@ -56,9 +57,6 @@ const MyProducts = () => {
     });
   };
 
-  const handleUpdate= () =>{
-    navigate('/dashboard/myproducts/update')
-  }
 
   return (
     <div>
@@ -105,7 +103,26 @@ const MyProducts = () => {
                     <td>{item.quantity}</td>
                     <td>{item.salesCount}</td>
                     <th>
-                      <button className="btn bg-base-300">Update</button>
+                      {/* The button to open modal */}
+                      <label htmlFor={`my_modal_${item._id}`} className="btn">
+                        Update
+                      </label>
+
+                      {/* Put this part before </body> tag */}
+                      <input
+                        type="checkbox"
+                        id={`my_modal_${item._id}`}
+                        className="modal-toggle"
+                      />
+                      <div className="modal" role="dialog">
+                        <div className="modal-box">
+                         {/* form goes here */}
+                         <UpdateProduct id={item._id}></UpdateProduct>
+                        </div>
+                        <label className="modal-backdrop" htmlFor={`my_modal_${item._id}`}>
+                          Close
+                        </label>
+                      </div>
                     </th>
                     <th>
                       <button

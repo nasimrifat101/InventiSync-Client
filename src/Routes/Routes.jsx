@@ -15,7 +15,6 @@ import MyProducts from "../Pages/Dashboard/Manager/MyProducts";
 import AddProducts from "../Pages/Dashboard/extra/AddProducts";
 
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/myproducts/addproducts",
-        element:<AddProducts></AddProducts>
+        element: (
+          <PrivateRoute>
+            <AddProducts></AddProducts>
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -58,21 +61,29 @@ const router = createBrowserRouter([
     children: [
       {
         path: "manageShops",
-        element: <AdminRoute><ManageShops></ManageShops></AdminRoute>,
+        element: (
+          <AdminRoute>
+            <ManageShops></ManageShops>
+          </AdminRoute>
+        ),
       },
       {
         path: "allUsers",
-        element:<AdminRoute> <AllUsers></AllUsers></AdminRoute>,
+        element: (
+          <AdminRoute>
+            {" "}
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
       {
         path: "mystore",
-        element:<MyStore></MyStore>
+        element: <MyStore></MyStore>,
       },
       {
         path: "myproducts",
-        element:<MyProducts></MyProducts>
+        element: <MyProducts></MyProducts>,
       },
-     
     ],
   },
 ]);
