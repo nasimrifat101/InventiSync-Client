@@ -6,10 +6,12 @@ import useAuth from "../../../Hooks/useAuth";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import DashNav from "../../../Layout/Dashboard/DashNav";
+import { useState } from "react";
 
 const SalesCollection = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
+  const [searchTerm, setSearchTerm] = useState('');
 
   const {
     data: products,
@@ -24,13 +26,18 @@ const SalesCollection = () => {
       return response.data;
     },
   });
+
+  const filteredProducts = products.filter((item) =>
+  item._id.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
   return (
     <div>
       <Helmet>
         <title>InventiSync | D | Sales Collection</title>
       </Helmet>
 
-      <DashNav heading={"Sales Collection"}></DashNav>
+      <DashNav heading={"Sales Collection"} setSearchTerm={setSearchTerm}></DashNav>
       <div>
         {isLoading ? (
           <LoadingPage></LoadingPage>
@@ -50,7 +57,7 @@ const SalesCollection = () => {
                 </thead>
                 <tbody>
                   {/* row 1 */}
-                  {products.map((item) => (
+                  {filteredProducts.map((item) => (
                     <tr key={item._id}>
                       <td>
                         <div className="flex items-center gap-3">
