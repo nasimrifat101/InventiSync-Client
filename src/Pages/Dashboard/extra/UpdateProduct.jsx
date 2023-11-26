@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useQueryClient } from "@tanstack/react-query";
 
 const UpdateProduct = ({ id }) => {
-  const {user} = useAuth()
+  const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -36,6 +36,12 @@ const UpdateProduct = ({ id }) => {
     const cost = parseFloat(data.cost);
     const discount = parseFloat(data.discount);
 
+    const taxPercentage = 7.5;
+
+    const taxAmount = (cost * taxPercentage) / 100;
+
+    const sellingPrice = cost + taxAmount + (cost * profit) / 100;
+
     const product = {
       name,
       logo,
@@ -45,12 +51,13 @@ const UpdateProduct = ({ id }) => {
       profit,
       cost,
       discount,
+      sellingPrice,
     };
     console.log(product);
 
     axiosSecure.put(`/product/single/update/${id}`, product).then((res) => {
       console.log(res.data);
-    
+
       if (res.data.modifiedCount) {
         toast.success("Product Successfully Updated");
         queryClient.invalidateQueries(["products", user.email]);

@@ -14,7 +14,7 @@ import MyStore from "../Pages/Dashboard/Manager/MyStore";
 import MyProducts from "../Pages/Dashboard/Manager/MyProducts";
 import AddProducts from "../Pages/Dashboard/extra/AddProducts";
 import SalesCollection from "../Pages/Dashboard/Manager/SalesCollection";
-
+import CheckOut from "../Pages/Dashboard/Manager/CheckOut";
 
 const router = createBrowserRouter([
   {
@@ -87,7 +87,11 @@ const router = createBrowserRouter([
       },
       {
         path: "salescollection",
-        element:<SalesCollection></SalesCollection>
+        element: <SalesCollection></SalesCollection>,
+      },
+      {
+        path: "checkout",
+        element: <CheckOut></CheckOut>,
       },
     ],
   },

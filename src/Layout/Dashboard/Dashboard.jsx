@@ -83,20 +83,21 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <Link
+                        to="checkout"
+                        className="bg-base-300 hover:bg-black hover:text-white p-3 font-semibold"
+                      >
+                        Check Out
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
                         to="/summary"
                         className="bg-base-300 hover:bg-black hover:text-white p-3 font-semibold"
                       >
                         Sales Summary
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        to="/checkout"
-                        className="bg-base-300 hover:bg-black hover:text-white p-3 font-semibold"
-                      >
-                        Check Out
-                      </Link>
-                    </li>
+                    
                     <li>
                       <Link
                         to="/payment"

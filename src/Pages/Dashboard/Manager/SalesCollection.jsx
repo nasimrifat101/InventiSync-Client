@@ -7,11 +7,14 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import DashNav from "../../../Layout/Dashboard/DashNav";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import useAxiosNormal from "../../../Hooks/useAxiosNormal";
 
 const SalesCollection = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const [searchTerm, setSearchTerm] = useState('');
+  const axiosNormal = useAxiosNormal()
+  const [searchTerm, setSearchTerm] = useState("");
 
   const {
     data: products,
@@ -27,17 +30,48 @@ const SalesCollection = () => {
     },
   });
 
-  const filteredProducts = products.filter((item) =>
-  item._id.toLowerCase().includes(searchTerm.toLowerCase())
-);
+  // Check if products is undefined or loading
+  if (isLoading || !products) {
+    return <LoadingPage />;
+  }
 
+  const filteredProducts = products.filter((item) =>
+    item._id.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  const handleSold = (item) => {
+    axiosSecure.get(`/carts/${item._id}`)
+      .then((response) => {
+        toast.warn("Product is already in the cart. Please clear payment from Checkout tab.");
+      })
+      .catch((error) => {
+        if (error.response && error.response.status === 404) {
+          axiosSecure.post("/carts", item)
+            .then((res) => {
+              if (res.data.insertedId) {
+                toast.success("Added to cart for approval");
+              } else {
+                toast.warn("Can't sell right now");
+              }
+            })
+            .catch((error) => {
+              toast.error("Error adding to cart");
+            });
+        } else {
+          toast.error("Error checking cart");
+        }
+      });
+  };
+  
   return (
     <div>
       <Helmet>
         <title>InventiSync | D | Sales Collection</title>
       </Helmet>
 
-      <DashNav heading={"Sales Collection"} setSearchTerm={setSearchTerm}></DashNav>
+      <DashNav
+        heading={"Sales Collection"}
+        setSearchTerm={setSearchTerm}
+      ></DashNav>
       <div>
         {isLoading ? (
           <LoadingPage></LoadingPage>
@@ -57,6 +91,7 @@ const SalesCollection = () => {
                 </thead>
                 <tbody>
                   {/* row 1 */}
+                  {/* row 1 */}
                   {filteredProducts.map((item) => (
                     <tr key={item._id}>
                       <td>
@@ -74,12 +109,16 @@ const SalesCollection = () => {
                       </td>
                       <td>{item.quantity}</td>
                       <td>{item.discount}</td>
-                      <th>
-                        <td>{item.sellingPrice}</td>
-                      </th>
-                      <th>
-                        <button className="btn bg-base-300">Sold to Customer</button>
-                      </th>
+                      {/* Corrected the structure here */}
+                      <td>{item.sellingPrice}</td>
+                      <td>
+                        <button
+                          onClick={() => handleSold(item)}
+                          className="btn bg-base-300"
+                        >
+                          Sold to Customer
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -88,6 +127,7 @@ const SalesCollection = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </div>
   );
 };
