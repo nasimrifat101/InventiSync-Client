@@ -13,7 +13,7 @@ import useAxiosNormal from "../../../Hooks/useAxiosNormal";
 const SalesCollection = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const axiosNormal = useAxiosNormal()
+  const axiosNormal = useAxiosNormal();
   const [searchTerm, setSearchTerm] = useState("");
 
   const {
@@ -39,31 +39,36 @@ const SalesCollection = () => {
     item._id.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const handleSold = (item) => {
-    console.log('Item:', item);
-    axiosSecure.get(`/carts/${item._id}`)
-    .then((response) => {
-      if (response.data) {
-        toast.warn("Product is already in the cart. Please clear payment from Checkout tab.")}
+    console.log("Item:", item);
+    axiosSecure
+      .get(`/carts/${item._id}`)
+      .then((response) => {
+        if (response.data) {
+          toast.warn(
+            "Product is already in the cart. Please clear payment from Checkout tab."
+          );
+        }
       })
       .catch((error) => {
         if (error.response && error.response.status === 404) {
           axiosSecure.post("/carts", item)
-            .then((res) => {
-              if (res.data.insertedId) {
-                toast.success("Added to cart for approval");
-              } else {
-                toast.warn("Can't sell right now");
-              }
-            })
-            .catch((error) => {
-              toast.error("Error adding to cart");
-            });
+          .then((res) => {
+            if (res.data.modifiedCount > 0) {
+              toast.warn("Can't sell right now");
+            } else {
+             
+              toast.success("Added to cart for approval");
+            }
+          })
+          .catch((error) => {
+            toast.error("Error adding to cart");
+          });
         } else {
           toast.error("Error checking cart");
         }
       });
   };
-  
+
   return (
     <div>
       <Helmet>
