@@ -30,7 +30,7 @@ const UpdateProduct = ({ id }) => {
     const name = data.name;
     const logo = data.image;
     const location = data.location;
-    const quantity = data.quantity;
+    const quantity = parseFloat(data.quantity);
     const info = data.description;
     const profit = parseFloat(data.profit);
     const cost = parseFloat(data.cost);

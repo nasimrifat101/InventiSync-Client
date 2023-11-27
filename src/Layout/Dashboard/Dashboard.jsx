@@ -52,6 +52,14 @@ const Dashboard = () => {
                         All Products
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        to="adminsalessummary"
+                        className="bg-base-300 hover:bg-black hover:text-white p-3 font-semibold"
+                      >
+                        Sales Summury
+                      </Link>
+                    </li>
                    
                   </>
                 )}

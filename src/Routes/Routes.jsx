@@ -18,6 +18,8 @@ import CheckOut from "../Pages/Dashboard/Manager/CheckOut";
 import PaymentSubscribsion from "../Pages/Dashboard/Manager/PaymentSubscribsion";
 import SalesSummury from "../Pages/Dashboard/Manager/SalesSummury";
 import AdminAllProducts from "../Pages/Dashboard/Admin/AdminAllProducts";
+import SalesASummury from "../Pages/Dashboard/Admin/SalesASummury";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -107,6 +109,14 @@ const router = createBrowserRouter([
       {
         path: 'allproducts',
         element: <AdminRoute><AdminAllProducts></AdminAllProducts></AdminRoute>
+      },
+      {
+        path: 'adminsalessummary',
+        element: <SalesASummury></SalesASummury>
+      },
+      {
+        path: 'payment/paymentstripe',
+        element: <Payment></Payment>
       }
     ],
   },
