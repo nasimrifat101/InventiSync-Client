@@ -6,6 +6,8 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import CartCard from "../extra/CartCard";
+import CheckOutBanner from "./style/CheckOutBanner";
+import LoadingPage from "../../ErrorPages/LoadingPage";
 
 const CheckOut = () => {
   const { user } = useAuth();
@@ -33,7 +35,7 @@ const CheckOut = () => {
       <DashNavSecond heading={"Check Out"}></DashNavSecond>
       <div className="">
         {isLoading ? (
-          <p>Loading...</p>
+        <LoadingPage></LoadingPage>
         ) : (
           <>
             {products && products.length > 0 ? (
@@ -43,7 +45,7 @@ const CheckOut = () => {
                 ))}
               </div>
             ) : (
-              <p>Your cart is empty.</p>
+            <CheckOutBanner></CheckOutBanner>
             )}
           </>
         )}
