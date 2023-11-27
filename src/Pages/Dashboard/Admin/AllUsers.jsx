@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import useAxiosNormal from "../../../Hooks/useAxiosNormal";
 import { ToastContainer, toast } from "react-toastify";
@@ -14,6 +15,9 @@ const AllUsers = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [selectedEmail, setSelectedEmail] = useState("");
   const [isloading, setLoading] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(5);
 
   useEffect(() => {
     setLoading(true);
@@ -57,6 +61,12 @@ const AllUsers = () => {
     }
   };
 
+  const indexOfLastUser = currentPage * itemsPerPage;
+  const indexOfFirstUser = indexOfLastUser - itemsPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div>
       <Helmet>
@@ -80,7 +90,7 @@ const AllUsers = () => {
             </thead>
             <tbody>
               {/* rows */}
-              {users.map((item) => (
+              {currentUsers.map((item) => (
                 <tr key={item._id}>
                   <td>
                     <div className="flex items-center gap-3">
@@ -126,6 +136,21 @@ const AllUsers = () => {
               ))}
             </tbody>
           </table>
+           {/* Pagination */}
+           <ul className="pagination text-center flex justify-center mt-4">
+            {Array.from({ length: Math.ceil(users.length / itemsPerPage) }).map(
+              (_, index) => (
+                <li key={index} className="page-item ">
+                  <button
+                    onClick={() => paginate(index + 1)}
+                    className="page-link btn bg-base-200"
+                  >
+                    {index + 1}
+                  </button>
+                </li>
+              )
+            )}
+          </ul>
         </div>
       )}
       <EmailModal
