@@ -91,7 +91,7 @@ const Dashboard = () => {
                     </li>
                     <li>
                       <Link
-                        to="/summary"
+                        to="summary"
                         className="bg-base-300 hover:bg-black hover:text-white p-3 font-semibold"
                       >
                         Sales Summary

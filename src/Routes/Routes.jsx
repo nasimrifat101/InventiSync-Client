@@ -16,6 +16,7 @@ import AddProducts from "../Pages/Dashboard/extra/AddProducts";
 import SalesCollection from "../Pages/Dashboard/Manager/SalesCollection";
 import CheckOut from "../Pages/Dashboard/Manager/CheckOut";
 import PaymentSubscribsion from "../Pages/Dashboard/Manager/PaymentSubscribsion";
+import SalesSummury from "../Pages/Dashboard/Manager/SalesSummury";
 
 const router = createBrowserRouter([
   {
@@ -97,6 +98,10 @@ const router = createBrowserRouter([
       {
         path: 'payment',
         element: <PaymentSubscribsion></PaymentSubscribsion>
+      },
+      {
+        path: 'summary',
+        element: <SalesSummury></SalesSummury>
       }
     ],
   },
