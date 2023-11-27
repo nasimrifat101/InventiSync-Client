@@ -57,7 +57,7 @@ const SalesCollection = () => {
               toast.warn("Can't sell right now");
             } else {
              
-              toast.success("Added to cart for approval");
+              toast.success("Added to checkout for approval");
             }
           })
           .catch((error) => {
@@ -91,6 +91,7 @@ const SalesCollection = () => {
                   <tr>
                     <th>Product Name</th>
                     <th>Quantity</th>
+                    <th>Buying Price</th>
                     <th>Discount</th>
                     <th>Selling Price</th>
                     <th>Record Product</th>
@@ -115,6 +116,7 @@ const SalesCollection = () => {
                         </div>
                       </td>
                       <td>{item.quantity}</td>
+                      <td>{item.cost}</td>
                       <td>{item.discount}</td>
                       {/* Corrected the structure here */}
                       <td>{item.sellingPrice}</td>
@@ -123,7 +125,7 @@ const SalesCollection = () => {
                           onClick={() => handleSold(item)}
                           className="btn bg-base-300"
                         >
-                          Sold to Customer
+                          Sold
                         </button>
                       </td>
                     </tr>
