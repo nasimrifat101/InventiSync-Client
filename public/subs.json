@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Basic Package",
+      "description": "The Basic Package provides essential features for efficient inventory management. Ideal for small businesses, it allows storage of up to 200 products in the inventory.",
+      "price": "$10"
+    },
+    {
+      "id": 2,
+      "name": "Standard Package",
+      "description": "Upgrade to the Standard Package for comprehensive inventory control. Suited for growing businesses, it offers an expanded product limit of up to 450 items in the inventory.",
+      "price": "$30"
+    },
+    {
+      "id": 3,
+      "name": "Premium Package",
+      "description": "Experience advanced features with the Premium Package, designed for robust inventory management. Perfect for large enterprises, it allows storage of up to 1500 products in the inventory.",
+      "price": "$50"
+    }
+  ]
+  
