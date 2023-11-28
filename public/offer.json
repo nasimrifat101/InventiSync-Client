@@ -1,39 +1,38 @@
 [
-    {
-      "id": 1,
-      "img": "path/to/image1.jpg",
-      "title": "Real-Time Inventory Tracking",
-      "info": "Track your inventory in real-time to optimize stock levels and prevent shortages."
-    },
-    {
-      "id": 2,
-      "img": "path/to/image2.jpg",
-      "title": "User-Friendly Interface",
-      "info": "Enjoy an intuitive and user-friendly interface for easy navigation and efficient management."
-    },
-    {
-      "id": 3,
-      "img": "path/to/image3.jpg",
-      "title": "Customizable Solutions",
-      "info": "Tailor the system to your unique business needs with our customizable inventory solutions."
-    },
-    {
-      "id": 4,
-      "img": "path/to/image4.jpg",
-      "title": "Analytics and Reporting",
-      "info": "Gain valuable insights with comprehensive analytics and reporting tools for informed decision-making."
-    },
-    {
-      "id": 5,
-      "img": "path/to/image5.jpg",
-      "title": "Automated Alerts",
-      "info": "Receive automated alerts and notifications to stay informed about stock levels and potential issues."
-    },
-    {
-      "id": 6,
-      "img": "path/to/image6.jpg",
-      "title": "Secure Data Management",
-      "info": "Ensure the security of your data with robust data management and encryption measures."
-    }
-  ]
-  
+  {
+    "id": 1,
+
+    "title": "Real-Time Inventory Tracking",
+    "info": "Track your inventory in real-time to optimize stock levels and prevent shortages."
+  },
+  {
+    "id": 2,
+
+    "title": "User-Friendly Interface",
+    "info": "Enjoy an intuitive and user-friendly interface for easy navigation and efficient management."
+  },
+  {
+    "id": 3,
+
+    "title": "Customizable Solutions",
+    "info": "Tailor the system to your unique business needs with our customizable inventory solutions."
+  },
+  {
+    "id": 4,
+
+    "title": "Analytics and Reporting",
+    "info": "Gain valuable insights with comprehensive analytics and reporting tools for informed decision-making."
+  },
+  {
+    "id": 5,
+
+    "title": "Automated Alerts",
+    "info": "Receive automated alerts and notifications to stay informed about stock levels and potential issues."
+  },
+  {
+    "id": 6,
+
+    "title": "Secure Data Management",
+    "info": "Ensure the security of your data with robust data management and encryption measures."
+  }
+]

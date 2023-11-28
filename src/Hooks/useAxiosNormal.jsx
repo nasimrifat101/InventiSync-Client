@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosNormal = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://inventi-sync-server.vercel.app',
 })
 
 const useAxiosNormal = () => {

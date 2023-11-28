@@ -6,7 +6,7 @@ const SellingCard = ({ item }) => {
     <div>
       <div className="card text-base-300 border border-black hover:shadow-xl">
         <div className="card-body">
-          <h2 className="font-black">{title}</h2>
+          <h2 className="font-black text-lg">{title}</h2>
           <p>{info}</p>
         </div>
       </div>

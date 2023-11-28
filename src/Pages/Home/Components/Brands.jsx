@@ -28,7 +28,7 @@ const Brands = () => {
                     <h2 className="text-center text-4xl font-bold pb-5">{item.name}</h2>
                     <p className="text-center">{item.description}</p>
                     <div className="card-actions">
-                      <button className="btn w-full text-2xl bg-green-200 border-none text-base-300 ">{item.price}</button>
+                      <button className="btn w-full text-2xl bg-green-200 border-none text-base-300 hover:text-white">{item.price}</button>
                     </div>
                   </div>
                 </div>
