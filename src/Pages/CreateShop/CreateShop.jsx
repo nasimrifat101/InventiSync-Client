@@ -7,6 +7,7 @@ import useAuth from "../../Hooks/useAuth";
 import useAxiosNormal from "../../Hooks/useAxiosNormal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
@@ -15,6 +16,7 @@ const CreateShop = () => {
   const axiosNormal = useAxiosNormal();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const axiosSecure = useAxiosSecure()
   const {
     register,
     formState: { errors },
@@ -53,7 +55,7 @@ const CreateShop = () => {
         photo,
       };
       console.log(shop);
-      axiosNormal
+      axiosSecure
         .post("/shop", shop)
         .then((res) => {
           console.log(res.data);
