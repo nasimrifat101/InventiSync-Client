@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
+import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 
 const Navbar = () => {
   const [showOptions, setShowOptions] = useState(false);
   const { user, logOut } = useAuth();
+  const axiosSecure = useAxiosSecure();
+  const [userData, setUserData] = useState({});
 
   const handleUserClick = () => {
     setShowOptions(!showOptions);
   };
-  
+
+  axiosSecure.get(`/users/individual/${user?.email}`).then((res) => {
+    setUserData(res.data);
+    // console.log(res.data)
+  });
+
   const navlinks = (
     <>
       <li>
@@ -23,25 +31,27 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
-          }
-          to="/createShop"
-        >
-          <span className="font-semibold">Create Shop</span>
-        </NavLink>
+        {userData?.role ? (
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
+            }
+            to="/dashboard"
+          >
+            <span className="font-semibold">Dashboard</span>
+          </NavLink>
+        ) : (
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
+            }
+            to="/createShop"
+          >
+            <span className="font-semibold">Create Shop</span>
+          </NavLink>
+        )}
       </li>
-      <li>
-        <NavLink
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
-          }
-          to="/dashboard"
-        >
-          <span className="font-semibold">Dashboard</span>
-        </NavLink>
-      </li>
+
       <li>
         <NavLink
           className={({ isActive, isPending }) =>

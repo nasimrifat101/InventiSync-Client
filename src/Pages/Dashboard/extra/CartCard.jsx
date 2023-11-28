@@ -134,7 +134,7 @@ const CartCard = ({ item, refetch }) => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{item.name}</h2>
+          <h2 className="">{item.name}</h2>
           <p>Price: {price}</p>
           <p>Quantity: {item.quantity}</p>
           <button

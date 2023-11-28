@@ -11,6 +11,7 @@ import useAxiosSecure from "../../Hooks/useAxiosSecure";
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
+
 const CreateShop = () => {
   const { user } = useAuth();
   const axiosNormal = useAxiosNormal();
@@ -64,6 +65,7 @@ const CreateShop = () => {
             navigate('/dashboard')
           }
         })
+        
         .catch((error) => {
           console.error("Error creating shop:", error);
           toast.warn("You already have a shop");

@@ -123,7 +123,7 @@ const AddProducts = () => {
         console.log(res.data);
         if (res.data.insertedId) {
           toast.success("Product added successfully");
-          navigate("/dashboard/myproducts");
+          // navigate("/dashboard/myproducts");
         }
       })
       .catch((error) => {
