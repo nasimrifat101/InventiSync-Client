@@ -66,7 +66,7 @@ const CreateShop = () => {
         })
         .catch((error) => {
           console.error("Error creating shop:", error);
-          toast.warn("Shop already exists");
+          toast.warn("You already have a shop");
         })
         .finally(() => {
           setIsLoading(false);
