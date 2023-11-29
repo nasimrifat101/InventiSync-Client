@@ -32,7 +32,7 @@ const Footer = () => {
         </nav>
       </footer>
       <aside>
-        <p className="text-center bg-base-200 pb-4">Copyright © 2023 - All right reserved by ACME Industries Ltd</p>
+        <p className="text-center bg-base-200 pb-4">Copyright © 2023 - All right reserved by InventiSync Industries Ltd</p>
       </aside>
     </div>
   );

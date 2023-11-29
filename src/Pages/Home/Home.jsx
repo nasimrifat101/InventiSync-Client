@@ -7,6 +7,8 @@ import Footer from "./Components/Banner/Footer";
 import Brands from "./Components/Brands";
 import Trusted from "./Components/Trusted";
 import Preloader from "./Components/Banner/Preeloader";
+import Contact from "./Components/Contact";
+import NewsLetter from "./Components/NewsLetter";
 
 
 const Home = () => {
@@ -35,6 +37,8 @@ const Home = () => {
           <SellingPoint />
           <Brands />
           <Trusted />
+          <Contact></Contact>
+          <NewsLetter></NewsLetter>
           <Footer />
         </>
       )}
