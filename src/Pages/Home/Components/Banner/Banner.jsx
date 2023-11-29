@@ -2,8 +2,8 @@ const Banner = () => {
   return (
     <div className="h-[500px]">
       <div className="max-w-6xl mx-auto grid grid-cols-2">
-        <div className="space-y-5 mt-28">
-          <h1 className="text-7xl font-bold">Inventory Management</h1>
+        <div className="space-y-5 mt-24">
+          <h1 className="text-8xl text-green-200 font-bold">Inventory Management</h1>
           <p className="w-[520px]">
             Elevate Efficiency with Our Inventory Management Solution!
             Streamline control, minimize errors, and maximize profits
@@ -11,8 +11,8 @@ const Banner = () => {
           </p>
          
         </div>
-        <div>
-       
+        <div className="flex justify-end">
+        <img src="https://i.postimg.cc/mr7hDzfQ/Frame-3-4.png" className="h-[450px]"/>
         </div>
       </div>
     </div>

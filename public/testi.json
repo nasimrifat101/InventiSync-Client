@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "company": "ABC Corporation",
+    "title": "John Smith",
+    "testimonial": "We are extremely satisfied with InventiSync. Their product has greatly helped us streamline our inventory management process, and InventiSync's support has been outstanding.",
+    "date": "2023-11-01",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "company": "XYZ Inc.",
+    "title": "Emily Davis",
+    "testimonial": "InventiSync has been a game-changer for us. The efficiency it brought to our inventory management is beyond our expectations. Thank you, InventiSync!",
+    "date": "2023-11-05",
+    "rating": 4.5
+  },
+  {
+    "id": 3,
+    "company": "LMN Enterprises",
+    "title": "Michael Johnson",
+    "testimonial": "Our experience with InventiSync has been fantastic. The features provided by InventiSync have made our inventory management seamless, and their team is always responsive to our needs.",
+    "date": "2023-11-10",
+    "rating": 4.8
+  },
+  {
+    "id": 4,
+    "company": "PQR Ltd.",
+    "title": "Sophia Williams",
+    "testimonial": "Choosing InventiSync was one of the best decisions for our company. Their platform is user-friendly, and the integration into our existing system was smooth.",
+    "date": "2023-11-15",
+    "rating": 4.2
+  },
+  {
+    "id": 5,
+    "company": "LMNOP Corporation",
+    "title": "Daniel Miller",
+    "testimonial": "We highly recommend InventiSync. The level of accuracy and control it offers in inventory management is remarkable. It has truly optimized our operations.",
+    "date": "2023-11-20",
+    "rating": 4.7
+  },
+  {
+    "id": 6,
+    "company": "QRS Industries",
+    "title": "Olivia Brown",
+    "testimonial": "InventiSync's solution has exceeded our expectations. Our inventory processes are now more efficient, and we appreciate the reliability and ease of use the platform provides.",
+    "date": "2023-11-25",
+    "rating": 4.9
+  }
+]

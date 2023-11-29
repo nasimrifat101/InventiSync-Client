@@ -10,7 +10,7 @@ const Brands = () => {
     <div className="h-[500px]">
       <div className="max-w-6xl mx-auto grid grid-cols-2">
         <div className="space-y-6 pt-10">
-          <h2 className="text-9xl font-bold">One Time Payment</h2>
+          <h2 className="text-9xl text-green-200 font-bold">One Time Payment</h2>
           <p className="w-[550px]">
             Streamline your business operations effortlessly with our
             hassle-free, one-time subscription plan. Experience the power of
@@ -23,7 +23,7 @@ const Brands = () => {
           <div className="carousel carousel-center max-w-lg p-4 space-x-4 bg-neutral rounded-box mt-20">
             {data.map((item) => (
               <div key={data.id} className="carousel-item">
-                <div className="card h-96 w-80 text-base-300 bg-blue-100 shadow-xl">
+                <div className="card h-96 w-80 bg-base-300 shadow-xl">
                   <div className="card-body">
                     <h2 className="text-center text-4xl font-bold pb-5">{item.name}</h2>
                     <p className="text-center">{item.description}</p>

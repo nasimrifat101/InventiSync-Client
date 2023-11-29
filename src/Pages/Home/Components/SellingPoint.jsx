@@ -4,7 +4,7 @@ import SellingCard from "./Cards/SellingCard";
 
 const SellingPoint = () => {
     const [datas, setData] = useState([])
-    axios.get('/offer.json')
+    axios.get('offer.json')
     .then(res=>{
         setData(res.data)
     })

@@ -4,6 +4,7 @@ import Banner from "./Components/Banner/Banner";
 import SellingPoint from "./Components/SellingPoint";
 import Footer from "./Components/Banner/Footer";
 import Brands from "./Components/Brands";
+import Trusted from "./Components/Trusted";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
      <Banner></Banner>
      <SellingPoint></SellingPoint>
      <Brands></Brands>
+     <Trusted></Trusted>
      <Footer></Footer>
     </div>
   );
