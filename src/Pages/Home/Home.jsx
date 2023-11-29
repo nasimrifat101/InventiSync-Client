@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Navbar from "./Components/Navbar/Navbar";
 import Banner from "./Components/Banner/Banner";
@@ -5,19 +6,38 @@ import SellingPoint from "./Components/SellingPoint";
 import Footer from "./Components/Banner/Footer";
 import Brands from "./Components/Brands";
 import Trusted from "./Components/Trusted";
+import Preloader from "./Components/Banner/Preeloader";
+
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div>
-      <Navbar></Navbar>
-      <Helmet>
-        <title>InventiSync | Home</title>
-      </Helmet>
-     <Banner></Banner>
-     <SellingPoint></SellingPoint>
-     <Brands></Brands>
-     <Trusted></Trusted>
-     <Footer></Footer>
+      {loading ? (
+        <Preloader></Preloader>
+      ) : (
+        <>
+          <Navbar />
+          <Helmet>
+            <title>InventiSync | Home</title>
+          </Helmet>
+        
+          <Banner />
+          <SellingPoint />
+          <Brands />
+          <Trusted />
+          <Footer />
+        </>
+      )}
     </div>
   );
 };

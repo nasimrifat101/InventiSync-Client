@@ -7,7 +7,7 @@ const TrustCard = ({ item }) => {
 
   return (
     <div>
-      <div className="card w-72 mr-5 h-[340px] border border-black shadow-xl">
+      <div className="card bg-base-100 text-white w-72 mr-5 h-[340px] border border-black shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
           <p>{company}</p>
