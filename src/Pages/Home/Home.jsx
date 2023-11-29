@@ -9,7 +9,7 @@ import Trusted from "./Components/Trusted";
 import Preloader from "./Components/Banner/Preeloader";
 import Contact from "./Components/Contact";
 import NewsLetter from "./Components/NewsLetter";
-
+import TheEnd from "./Components/TheEnd";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -32,13 +32,14 @@ const Home = () => {
           <Helmet>
             <title>InventiSync | Home</title>
           </Helmet>
-        
+
           <Banner />
           <SellingPoint />
           <Brands />
           <Trusted />
           <Contact></Contact>
           <NewsLetter></NewsLetter>
+          <TheEnd></TheEnd>
           <Footer />
         </>
       )}
