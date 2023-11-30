@@ -9,10 +9,10 @@ const SellingPoint = () => {
         setData(res.data)
     })
   return (
-    <div className="h-[530px] text-base-300 bg-green-200 ">
+    <div className="lg:h-[530px] text-base-300 bg-green-200 ">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-center text-4xl font-bold py-10"> What We Offer</h2>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid lg:grid-cols-3 gap-5 p-3 lg:p-0">
             {
                 datas?.map(item=> <SellingCard key={item.id} item={item}></SellingCard>)
             }
