@@ -77,7 +77,11 @@ const AddProducts = () => {
     const owner = user?.displayName;
     const OwnerEmail = user?.email;
     const tax = 0.075; // 7.5% Tax
-    const sellingPrice = cost + cost * tax + (cost * profit) / 100;
+    const sellingPrice =
+      parseFloat(cost) +
+      parseFloat(cost) * tax +
+      (parseFloat(cost) * profit) / 100;
+    const formattedSellingPrice = sellingPrice.toFixed(2);
     const productAddedDate = new Date();
     const year = productAddedDate.getFullYear();
     const month = productAddedDate.getMonth() + 1; // Months are zero-based, so we add 1
@@ -110,7 +114,7 @@ const AddProducts = () => {
       shopName,
       owner,
       OwnerEmail,
-      sellingPrice,
+      sellingPrice : formattedSellingPrice,
       dateStr,
       timeStr,
       salesCount,
@@ -129,7 +133,6 @@ const AddProducts = () => {
       .catch((error) => {
         console.error("Error :", error);
         toast.warn("product cant be added at the moment");
-       
       })
       .finally(() => {
         setIsLoading(false);
