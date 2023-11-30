@@ -10,8 +10,8 @@ const Brands = () => {
     <div className="h-[350px] lg:h-[500px]">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2">
         <div className="space-y-6 mt-10 p-3 lg:p-0">
-          <h2 className="text-6xl lg:text-9xl text-green-200 font-bold">One Time Payment</h2>
-          <p className="lg:w-[550px]">
+          <h2 className="text-6xl lg:text-9xl text-green-200 font-bold cursor-not-allowed">One Time Payment</h2>
+          <p className="lg:w-[550px] cursor-not-allowed">
             Streamline your business operations effortlessly with our
             hassle-free, one-time subscription plan. Experience the power of
             cutting-edge inventory management through our user-friendly
