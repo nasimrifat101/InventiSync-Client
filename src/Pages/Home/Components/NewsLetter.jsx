@@ -3,7 +3,7 @@ import SocialLogin from "../../Auth/SocialLogin";
 
 const NewsLetter = () => {
   return (
-    <div className="lg:h-[550px] bg-green-200 text-base-200 mt-32">
+    <div className="lg:h-[550px] bg-green-200 text-base-200 mt-20">
       <h1 className="text-4xl text-center p-5 font-bold text-base-200">
         Contact Us
       </h1>
@@ -32,14 +32,14 @@ const NewsLetter = () => {
               />
             </div>
             <div>
-              <p className="text-xl font-bold">Subject of inquire</p>
+              <p className="text-xl font-bold">subject of inquire</p>
               <input
                 type="text"
                 className=" outline-none text-xl font-bold bg-transparent border-b-2 w-full border-black"
               />
             </div>
             <div>
-              <p className="text-xl font-bold">I want to know about</p>
+              <p className="text-xl font-bold">my question is</p>
               <input
                 type="text"
                 className=" outline-none text-xl font-bold bg-transparent border-b-2 w-full border-black"

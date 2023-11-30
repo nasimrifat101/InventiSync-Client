@@ -12,6 +12,7 @@ import NewsLetter from "./Components/NewsLetter";
 import TheEnd from "./Components/TheEnd";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import BeforeTheEnd from "./Components/BeforeTheEnd";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -52,9 +53,16 @@ const Home = () => {
             <Contact></Contact>
           </div>
           <div data-aos="fade-up" data-aos-duration="1000">
+            <BeforeTheEnd></BeforeTheEnd>
+          </div>
+          <div data-aos="fade-down" data-aos-duration="1000">
+            <TheEnd></TheEnd>
+          </div>
+          <div data-aos="fade-up" data-aos-duration="1000">
             <NewsLetter></NewsLetter>
           </div>
-          <TheEnd></TheEnd>
+
+          
           <Footer />
         </>
       )}
