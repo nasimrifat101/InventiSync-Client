@@ -43,6 +43,7 @@ https://inventisync-138b8.web.app/
 - **Toastify**: A React notification library.
 - **Swiper.js**: A modern slider library for seamless image carousels.
 - **React Icons**: A modern Icon library for React.
+- **AOS**: Animate on scroll library for React.
 - **Axios:** A promise-based HTTP client for the browser and Node.js, used for making asynchronous requests in this project.
 
 ### Back End
