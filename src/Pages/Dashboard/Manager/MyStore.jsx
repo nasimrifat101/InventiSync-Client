@@ -5,6 +5,7 @@ import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import DashNavSecond from "../extra/DashNavSecond";
 import ProfileCard from "../extra/ProfileCard";
 import StoreCard from "../extra/StoreCard";
+import { Helmet } from "react-helmet-async";
 
 const MyStore = () => {
   const axiosSecure = useAxiosSecure();
@@ -29,7 +30,8 @@ const MyStore = () => {
 
   return (
     <div>
-      <DashNavSecond heading={"My Stores"} text={''}></DashNavSecond>
+      <Helmet><title>InventiSync | D | My Store</title></Helmet>
+      <DashNavSecond heading={"My Store"} text={''}></DashNavSecond>
       <div className="">
         <StoreCard data={storeData}></StoreCard>
       </div>

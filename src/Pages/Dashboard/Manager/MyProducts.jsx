@@ -10,6 +10,7 @@ import useAuth from "../../../Hooks/useAuth";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import UpdateProduct from "../extra/UpdateProduct";
+import { Helmet } from "react-helmet-async";
 
 const MyProducts = () => {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ const MyProducts = () => {
 
   return (
     <div>
+      <Helmet><title>InventiSync | D | My Products</title></Helmet>
       <DashNavSecond
         heading={"All Products"}
         click={handleClick}
