@@ -7,16 +7,28 @@ https://inventisync-138b8.web.app/
 
 ## Features
 
-- **Dashboard**: A centralized hub providing an intuitive and comprehensive overview of inventory-related data.
-- **User Management**: Secure user authentication and management functionalities.
-- **Shop Management**: Easily create, update, and manage shops within the system.
-- **Product Tracking**: Efficient tracking of products, including sales data and analytics.
-- **Sales Summary**: Visual representation and detailed insights into sales performance.
-- **Email Integration**: Seamlessly send emails directly from the application for enhanced communication.
-- **Invoice Generation**: Automatically generate invoices for completed transactions.
-- **Image Uploads to ImgBB**: Effortlessly upload and manage product images using ImgBB hosting.
-- **SweetAlert**: A customizable alert library for a user-friendly notification experience.
-- **Swiper.js**: An easy-to-use modern slider library for smooth image carousel functionalities.
+- **User Management:**
+  - Create, update, and delete user accounts.
+  - Role-based access control (admin, manager, user).
+
+- **Shop Management:**
+  - Create and manage shops with customizable product limits.
+  - Associate shops with users and enable managers to control their respective shops.
+
+- **Product Management:**
+  - Add, update, and delete products.
+  - Track sales counts, profits, and quantities.
+
+- **Sales and Payment:**
+  - Record sales transactions and track income.
+  - Secure payment processing using Stripe.
+
+- **Subscription Management:**
+  - Handle user subscriptions for additional services.
+
+- **Dashboard Analytics:**
+  - View sales summaries, including total income, sold products, and more.
+
 
 ## Technologies Used
 
@@ -30,6 +42,8 @@ https://inventisync-138b8.web.app/
 - **React Hook Form**: A library for managing forms in React applications.
 - **Toastify**: A React notification library.
 - **Swiper.js**: A modern slider library for seamless image carousels.
+- **React Icons**: A modern Icon library for React.
+- **Axios:** A promise-based HTTP client for the browser and Node.js, used for making asynchronous requests in this project.
 
 ### Back End
 
@@ -38,6 +52,15 @@ https://inventisync-138b8.web.app/
 - **MongoDB**: A NoSQL database for scalable and flexible data storage.
 - **JWT (JSON Web Tokens)**: A compact, URL-safe means of representing claims to be transferred between two parties.
 - **React Query**: Used for fetching and caching data on the client side.
+ 
+### Payment
+- Stripe for payment processing
+
+### Other Tools
+  - React Helmet for managing document head
+  - React Hook Form for form management
+  - React Toastify for notifications
+  - React SweetAlert2 for taking user permission for crud.
 
 
 ## Contributing
@@ -48,6 +71,3 @@ Contributions are welcome!
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
-Feel free to adapt and customize this README as needed. If you have any specific details or sections you'd like to include, let me know!
