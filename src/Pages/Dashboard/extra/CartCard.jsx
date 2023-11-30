@@ -5,7 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 
 const CartCard = ({ item, refetch }) => {
-  const price = item.sellingPrice.toFixed(2);
+  const price = typeof item.sellingPrice === 'number' ? item.sellingPrice.toFixed(2) : 'N/A';
+
   const axiosSecure = useAxiosSecure();
 
   // get current date and time

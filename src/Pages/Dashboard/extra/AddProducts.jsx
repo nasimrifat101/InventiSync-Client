@@ -114,7 +114,7 @@ const AddProducts = () => {
       shopName,
       owner,
       OwnerEmail,
-      sellingPrice : formattedSellingPrice,
+      sellingPrice : parseFloat(formattedSellingPrice),
       dateStr,
       timeStr,
       salesCount,
