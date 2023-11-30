@@ -9,18 +9,17 @@ const CartCard = ({ item, refetch }) => {
 
   const axiosSecure = useAxiosSecure();
 
-  // get current date and time
+
   const productAddedDate = new Date();
   const year = productAddedDate.getFullYear();
-  const month = productAddedDate.getMonth() + 1; // Months are zero-based, so we add 1
+  const month = productAddedDate.getMonth() + 1; 
   const day = productAddedDate.getDate();
 
-  // Extract time components
+ 
   const hours = productAddedDate.getHours();
   const minutes = productAddedDate.getMinutes();
   const seconds = productAddedDate.getSeconds();
 
-  // Create separate date and time strings
   const dateStr = `${year}-${month.toString().padStart(2, "0")}-${day
     .toString()
     .padStart(2, "0")}`;
@@ -29,7 +28,7 @@ const CartCard = ({ item, refetch }) => {
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
   const sale = {
-    ...item, // include properties from the item object
+    ...item, 
     dateStr,
     timeStr,
   };
@@ -54,7 +53,7 @@ const CartCard = ({ item, refetch }) => {
             if (salesRes.data.insertedId) {
               toast.success("Added to sales");
 
-              // Use a Promise.all to run update operations concurrently
+              
               Promise.all([
                 // increase sales count
                 axiosSecure.put(`/product/increase-sales-count/${id}`),
@@ -86,6 +85,9 @@ const CartCard = ({ item, refetch }) => {
         console.error(error);
         toast.error("Error processing payment");
       });
+
+
+    
   };
 
   const generatePDF = () => {
