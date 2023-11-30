@@ -7,7 +7,7 @@ const Preloader = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setVisibleWordIndex((prevIndex) => prevIndex + 1);
-    }, 500);
+    }, 250);
     return () => clearTimeout(timeout);
   }, [visibleWordIndex]);
 
@@ -16,8 +16,11 @@ const Preloader = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content text-center">
           <div className="max-w-6xl">
-            <h1 className="text-5xl font-bold">
-              {words.slice(0, visibleWordIndex).map((word, index) => (
+            <h1
+              className="text-5xl font-bold transition-opacity duration-500"
+              style={{ opacity: visibleWordIndex === words.length ? 1 : 0 }}
+            >
+              {words.map((word, index) => (
                 <span key={index}>
                   {index > 0 && " "}
                   {word}

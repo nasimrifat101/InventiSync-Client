@@ -1,14 +1,24 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../../../Hooks/useAuth";
+import { useEffect } from "react";
+import useAxiosNormal from "../../../../Hooks/useAxiosNormal";
 
 const Navbar = () => {
   const [showOptions, setShowOptions] = useState(false);
   const { user, logOut } = useAuth();
+  const axiosNormal = useAxiosNormal();
+  const [userD, setUserD] = useState({});
 
   const handleUserClick = () => {
     setShowOptions(!showOptions);
   };
+
+  useEffect(() => {
+    axiosNormal.get(`/users/individual/${user?.email}`).then((res) => {
+      setUserD(res.data);
+    });
+  }, [axiosNormal, user?.email]);
 
   const navlinks = (
     <>
@@ -23,6 +33,27 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
+        {userD?.role ? (
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
+            }
+            to="/dashboard"
+          >
+            <span className="font-semibold">Dashboard</span>
+          </NavLink>
+        ) : (
+          <NavLink
+            className={({ isActive, isPending }) =>
+              isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
+            }
+            to="/createShop"
+          >
+            <span className="font-semibold">Create Shop</span>
+          </NavLink>
+        )}
+      </li>
+      {/* <li>
         <NavLink
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#4aed8b] underline" : ""
@@ -41,7 +72,7 @@ const Navbar = () => {
         >
           <span className="font-semibold">Dashboard</span>
         </NavLink>
-      </li>
+      </li> */}
 
       <li>
         <NavLink
