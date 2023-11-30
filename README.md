@@ -26,6 +26,7 @@ https://inventisync-138b8.web.app/
 - **React Query**: A tool for managing, caching, and updating remote and local data.
 - **React Router**: A standard library for routing in React applications.
 - **Tailwind CSS**: A utility-first CSS framework for building modern designs.
+- **Daisy UI**: A components library for Tailwind CSS.
 - **React Hook Form**: A library for managing forms in React applications.
 - **Toastify**: A React notification library.
 - **Swiper.js**: A modern slider library for seamless image carousels.
