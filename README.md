@@ -49,7 +49,11 @@ pass: Admin@123456
 - **React Icons**: A modern Icon library for React.
 - **AOS**: Animate on scroll library for React.
 - **Axios:** A promise-based HTTP client for the browser and Node.js, used for making asynchronous requests in this project.
+
+ <!-- 2 unique features -->
 - **EmailJs:** EmailJs for serverless email sending.
+- **ReactQr:** For generating qr code to easily manage stock in my product section.
+
 
 
 ### Back End

@@ -106,7 +106,7 @@ const SignUp = () => {
                   type="file"
                   {...register("photo", { required: "Photo is required" })}
                   accept="image/*"
-                  className="mt-1 p-2 border rounded-md"
+                  className="mt-1 p-2 border rounded-md w-[240px] lg:w-full"
                 />
               </div>
               <div className="form-control w-full">

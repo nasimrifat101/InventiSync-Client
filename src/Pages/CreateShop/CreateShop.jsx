@@ -101,7 +101,7 @@ const CreateShop = () => {
                 type="file"
                 {...register("image", { required: "Photo is required" })}
                 accept="image/*"
-                className="mt-1 p-2 border rounded-md"
+                className="mt-1 p-2 border rounded-md w-[250px] lg:w-full"
               />
             </div>
             {/* location */}

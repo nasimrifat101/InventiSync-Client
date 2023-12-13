@@ -154,7 +154,7 @@ const AddProducts = () => {
         <title>InventiSync | D | M | Add Products</title>
       </Helmet>
       <div className="max-w-6xl mx-auto grid grid-cols-2 gap-5">
-        <div>
+        <div className="hidden lg:block">
           <img
             src="https://i.postimg.cc/GmPptZ5b/pexels-eberhard-grossgasteiger-2086361.jpg"
             alt=""
