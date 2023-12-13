@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
+import QRCode from 'react-qr-code';
 import { useNavigate } from "react-router-dom";
 import DashNavSecond from "../extra/DashNavSecond";
 import useProducts from "../../../Hooks/useProducts";
@@ -104,6 +105,13 @@ const MyProducts = () => {
                     </td>
                     <td>{item.quantity}</td>
                     <td>{item.salesCount}</td>
+                    <td>
+
+                      <QRCode
+                        value={`Product ID: ${item._id}\nProduct Name: ${item.name}\nQuantity: ${item.quantity}`}
+                        size={80}  // Adjust the size as needed
+                      />
+                    </td>
                     <th>
                       {/* The button to open modal */}
                       <label htmlFor={`my_modal_${item._id}`} className="btn">
@@ -118,8 +126,8 @@ const MyProducts = () => {
                       />
                       <div className="modal" role="dialog">
                         <div className="modal-box">
-                         {/* form goes here */}
-                         <UpdateProduct id={item._id}></UpdateProduct>
+                          {/* form goes here */}
+                          <UpdateProduct id={item._id}></UpdateProduct>
                         </div>
                         <label className="modal-backdrop" htmlFor={`my_modal_${item._id}`}>
                           Close
