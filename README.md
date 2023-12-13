@@ -5,6 +5,10 @@ InventiSync is a comprehensive inventory management website equipped with a powe
 ## Live site
 https://inventisync-138b8.web.app/
 
+## Admin Credentials
+email: admin@gmail.com
+pass: Admin@123456
+
 ## Features
 
 - **User Management:**
