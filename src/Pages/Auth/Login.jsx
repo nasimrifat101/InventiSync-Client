@@ -34,8 +34,8 @@ const Login = () => {
         <title>InventiSync | Login</title>
       </Helmet>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-2">
-        <div className="p-10">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2">
+        <div className="p-10 hidden lg:block">
           <img
             src="https://i.postimg.cc/26G0zg4P/pramod-tiwari-jokb6u-SXflc-unsplash.jpg"
             alt=""
@@ -44,7 +44,7 @@ const Login = () => {
         </div>
         <div className="items-center space-y-2 p-10">
           <p className="font-semibold text-3xl">Login to</p>
-          <p className="text-5xl font-bold text-green-400">InventiSync</p>
+          <p className="text-3xl lg:text-5xl font-bold text-green-400">InventiSync</p>
           <div className="pt-5 space-y-3">
             <Link to="/">
               <button className="btn w-full" aria-label="Go to Home">

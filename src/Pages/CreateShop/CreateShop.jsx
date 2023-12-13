@@ -81,8 +81,8 @@ const CreateShop = () => {
       <Helmet>
         <title>InventiSync | Create Shop</title>
       </Helmet>
-      <div className="max-w-6xl mx-auto grid grid-cols-2">
-        <div className="p-8">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2">
+        <div className="p-8 ">
           {/* form */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <p className="text-4xl font-bold text-green-300">Fill in</p>
@@ -145,7 +145,7 @@ const CreateShop = () => {
             )}
           </form>
         </div>
-        <div>
+        <div className="hidden lg:block">
           <img src="https://i.postimg.cc/zBpN1Nvc/pexels-dids-2911527.jpg" className="h-[500px] w-full" />
         </div>
       </div>

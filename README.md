@@ -45,6 +45,8 @@ https://inventisync-138b8.web.app/
 - **React Icons**: A modern Icon library for React.
 - **AOS**: Animate on scroll library for React.
 - **Axios:** A promise-based HTTP client for the browser and Node.js, used for making asynchronous requests in this project.
+- **EmailJs:** EmailJs for serverless email sending.
+
 
 ### Back End
 

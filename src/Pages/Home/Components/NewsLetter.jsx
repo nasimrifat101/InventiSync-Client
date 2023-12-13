@@ -1,7 +1,36 @@
 import { Link } from "react-router-dom";
 import SocialLogin from "../../Auth/SocialLogin";
+/* eslint-disable react/no-unescaped-entities */
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewsLetter = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_FIRST_KEY,
+        import.meta.env.VITE_SEC_KEY,
+        form.current,
+        import.meta.env.VITE_THIRD_KEY,
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success('Email sent Successfully')
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          toast.warn('Sending Failed')
+        }
+      );
+  };
   return (
     <div className="lg:h-[550px] bg-green-200 text-base-200 mt-20">
       <h1 className="text-4xl text-center p-5 font-bold text-base-200">
@@ -9,12 +38,13 @@ const NewsLetter = () => {
       </h1>
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-5">
         <div>
-          <form className="space-y-4 p-3 lg:p-0">
+          <form className="space-y-4 p-3 lg:p-0" ref={form} onSubmit={sendEmail}>
             <div>
               <p className="text-xl font-bold">My name is</p>
               <input
                 type="text"
                 className=" outline-none text-xl font-bold bg-transparent border-b-2 w-full border-black"
+                name="user_name"
               />
             </div>
             <div>
@@ -22,6 +52,7 @@ const NewsLetter = () => {
               <input
                 type="text"
                 className=" outline-none text-xl font-bold bg-transparent border-b-2 w-full border-black"
+                name="user_email"
               />
             </div>
             <div>
@@ -36,6 +67,7 @@ const NewsLetter = () => {
               <input
                 type="text"
                 className=" outline-none text-xl font-bold bg-transparent border-b-2 w-full border-black"
+                name="subject"
               />
             </div>
             <div>
@@ -43,9 +75,13 @@ const NewsLetter = () => {
               <input
                 type="text"
                 className=" outline-none text-xl font-bold bg-transparent border-b-2 w-full border-black"
+                name="message"
               />
             </div>
-            <button className="w-full rounded-xl btn">send</button>
+            <button type="submit" className="w-full rounded-xl btn">
+              send
+            </button>
+
           </form>
         </div>
         <div>
@@ -66,6 +102,7 @@ const NewsLetter = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
